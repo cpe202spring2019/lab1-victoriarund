@@ -71,6 +71,10 @@ class TestLab1(unittest.TestCase):
         list_val=[1,1,1,1,1,1]
         self.assertEqual(bin_search(1, 0, 5, list_val), 2 )
 
+        #check if desired value appears twice
+        list_val=[1,1,1,1,2,2]
+        self.assertEqual(bin_search(2, 0, 5, list_val), 4 )
+
         #check if value is not in list
         list_val =[0,1,2,3,4,5,6,7,8]
         self.assertEqual(bin_search(20, 0, 8, list_val), None )
