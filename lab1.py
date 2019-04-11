@@ -19,9 +19,12 @@ def reverse_rec(int_list):   # must use recursion
     #need to check if right
     if int_list==None:
         raise ValueError	
+    if int_list==[]:
+        return []
     if len(int_list)==1:
         return [int_list[0]]
-    return [int_list[-1]] + reverse_rec(int_list[0:len(int_list)-1])
+    
+    return [int_list[len(int_list)-1]] + reverse_rec(int_list[0:len(int_list)-1])
 
 
 def bin_search(target, low, high, int_list):  
