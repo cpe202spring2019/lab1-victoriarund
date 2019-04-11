@@ -3,7 +3,6 @@ from lab1 import *
 
  # A few test cases.  Add more!!!
 class TestLab1(unittest.TestCase):
-
     def test_max_list_iter(self):
     #checks the expection ValueError being raised
         tlist = None
@@ -19,7 +18,7 @@ class TestLab1(unittest.TestCase):
     #check if two values are the same and are the max values
         self.assertEqual(max_list_iter([1,2,2]),2)
         self.assertEqual(max_list_iter([2,2,1]),2)
-        self.assertEqual(max_list_iter([1,2,1]),2)
+        self.assertEqual(max_list_iter([1,2,2]),2)
     #check for normal list with max value in each position
         self.assertEqual(max_list_iter([1,2,3]),3)
         self.assertEqual(max_list_iter([1,3,2]),3)
@@ -27,9 +26,9 @@ class TestLab1(unittest.TestCase):
     #check for if all the values are the same
         self.assertEqual(max_list_iter([1,1,1]),1)
     #check for floating values
-        self.assertEqual(max_list_iter([1.3,1.5,1.7]),1.7)
+        self.assertEqual(max_list_iter([1.3,1.5,1.7]),1.7)   
     #check if list is empty
-        self.assertEqual(max_list_iter([]),None)
+        self.assertEqual(max_list_iter([None]),None)
     
 
     def test_reverse_rec(self):
@@ -45,7 +44,8 @@ class TestLab1(unittest.TestCase):
         tlist = None
         with self.assertRaises(ValueError):  # used to check for exception
             reverse_rec(tlist)
-    
+    	#check if list is empty
+        self.assertEqual(reverse_rec([]),[])
     
     def test_bin_search(self):
         #check when search value is in each index
