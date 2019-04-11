@@ -28,7 +28,7 @@ class TestLab1(unittest.TestCase):
     #check for floating values
         self.assertEqual(max_list_iter([1.3,1.5,1.7]),1.7)   
     #check if list is empty
-        self.assertEqual(max_list_iter([None]),None)
+        self.assertEqual(max_list_iter([]),None)
     
 
     def test_reverse_rec(self):
